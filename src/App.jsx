@@ -1,14 +1,17 @@
 import { useState } from "react";
 import "./App.css";
 import Form from "./components/Form/Form";
-import Header from "./components/Header/Header";
+import Profile from "./components/Profile/Profile";
+
+const imgUrl = "https://i.imgur.com/yXOvdOSs.jpg";
 
 function App() {
   const [name, setName] = useState("");
   return (
     <>
-      <Header name={name} />
-      <Form />{" "}
+      <h1 className="my-8 text-center text-3xl"> Hello {name}</h1>
+      <Form setName={setName} />
+      {name && <Profile name={name} imgUrl={imgUrl} />}
     </>
   );
 }
